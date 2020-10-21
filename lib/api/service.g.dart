@@ -57,7 +57,7 @@ class _RestClient implements RestClient {
   }
 
   @override
-  Future<ModelGeneralReturn> postUpdateOrPassword(prefToken, param) async {
+  Future<ModelReturnLogin> postUpdateOrPassword(prefToken, param) async {
     ArgumentError.checkNotNull(prefToken, 'prefToken');
     ArgumentError.checkNotNull(param, 'param');
     const _extra = <String, dynamic>{};
@@ -73,7 +73,7 @@ class _RestClient implements RestClient {
             extra: _extra,
             baseUrl: baseUrl),
         data: _data);
-    final value = ModelGeneralReturn.fromJson(_result.data);
+    final value = ModelReturnLogin.fromJson(_result.data);
     return value;
   }
 

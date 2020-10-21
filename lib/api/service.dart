@@ -32,7 +32,7 @@ abstract class RestClient {
       @Body() ModelPostEditRegisterPassword param);
 
   @POST("Auth/register")
-  Future<ModelGeneralReturn> postUpdateOrPassword(
+  Future<ModelReturnLogin> postUpdateOrPassword(
       @Query("token") String prefToken,
       @Body() ModelPostEditRegisterPassword param);
 
